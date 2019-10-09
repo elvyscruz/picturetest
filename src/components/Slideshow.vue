@@ -2,9 +2,7 @@
   <div>
     <div class="w3-display-container">
       <img :src="slides[current].url" style="width:100%" />
-      <div class="w3-display-topright w3-xlarge w3-container w3-padding-16 w3-black">
-        <span class="w3-animate-top">{{slides[current].id + 1}} - {{slides[current].title}}</span>
-      </div>
+
       <div
         class="w3-center w3-container w3-display-bottom-middle w3-section w3-large w3-text-white w3-display-bottommiddle"
         style="width:100%"
