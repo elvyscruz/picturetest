@@ -5,13 +5,14 @@
 </template>
 
 <script>
-import Slideshow from './components/Slideshow.vue'
+import Slideshow from './components/Slideshow.vue';
 
 export default {
   name: 'app',
   components: {
     Slideshow
-  }
+  },
+  methods: {}
 }
 </script>
 
