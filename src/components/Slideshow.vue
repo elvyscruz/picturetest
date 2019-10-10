@@ -14,7 +14,7 @@
           v-for="slide in slides"
           :key="slide.id"
           class="w3-badge w3-border w3-transparent w3-hover-white w3-orange"
-          :class="{'w3-white': slide.id == current}"
+          :class="{ 'w3-white': slide.id === current }"
         ></span>
       </div>
     </div>
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       current: 0,
       slides: [
@@ -61,20 +61,20 @@ export default {
     }
   },
   methods: {
-    forward (event) {
+    forward(event) {
       if (this.current < this.slides.length - 1) {
         this.current++
       }
     },
-    backward () {
+    backward() {
       if (this.current > 0) {
         this.current--
       }
     },
-    set_slide (id) {
+    set_slide(id) {
       this.current = id
     },
-    keyPressed (event) {
+    keyPressed(event) {
       if (event.key === 'ArrowLeft') {
         this.backward()
       } else if (event.key === 'ArrowRight') {
@@ -82,7 +82,7 @@ export default {
       }
     }
   },
-  created () {
+  created() {
     window.addEventListener('keyup', this.keyPressed)
     // window.addEventListener('touchstart', this.forward)
   }

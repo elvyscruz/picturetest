@@ -48,6 +48,7 @@
           name="consent"
           value
           class="w3-radio"
+          required
         />
         <label>Acepto Participar</label>
       </p>
@@ -58,6 +59,7 @@
           name="consent"
           value="false"
           class="w3-radio"
+          required
         />
         <label>No voy a participar</label>
       </p>
@@ -77,7 +79,7 @@
 </template>
 
 <script>
-import SheetDB from 'sheetdb-js'
+// import PersonalQuestionnaireVue from './PersonalQuestionnaire.vue'
 
 export default {
   data() {
@@ -86,17 +88,7 @@ export default {
   methods: {
     continuar() {
       if (this.consent === '') {
-        SheetDB.write('https://sheetdb.io/api/v1/kcrrp64tuz8jo', {
-          sheet: 'Sheet1',
-          data: { fecha: new Date().toLocaleString(), email: this.email }
-        }).then(
-          function(result) {
-            console.log(result)
-          },
-          function(error) {
-            console.log(error)
-          }
-        )
+        this.$router.push({ name: 'pq', params: { email: this.email } })
       }
     }
   }
