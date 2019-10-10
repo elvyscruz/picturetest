@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w3-display-container">
+    <div class="w3-display-container w3-content">
       <img :src="slides[current].url" style="width:100%" />
 
       <div
@@ -35,25 +35,25 @@ export default {
       slides: [
         {
           id: 0,
-          url: 'https://via.placeholder.com/1024x350',
+          url: 'https://via.placeholder.com/1024x768',
           title: 'Las Flores',
           text: 'Slide text'
         },
         {
           id: 1,
-          url: 'https://via.placeholder.com/1024x350',
+          url: 'https://via.placeholder.com/1024x768',
           title: 'Partes de una Flor',
           text: 'Slide text'
         },
         {
           id: 2,
-          url: 'https://via.placeholder.com/1024x350',
+          url: 'https://via.placeholder.com/1024x768',
           title: 'Polinizacion',
           text: 'Slide text'
         },
         {
           id: 3,
-          url: 'https://via.placeholder.com/1024x350',
+          url: 'https://via.placeholder.com/1024x768',
           title: 'Tipos de Polinizacion',
           text: 'Slide text'
         }

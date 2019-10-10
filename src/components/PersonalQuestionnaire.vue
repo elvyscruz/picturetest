@@ -106,7 +106,7 @@
 </template>
 
 <script>
-import SheetDB from 'sheetdb-js'
+// import SheetDB from 'sheetdb-js'
 export default {
   data() {
     return {
@@ -118,24 +118,25 @@ export default {
   },
   methods: {
     continuar() {
-      SheetDB.write('https://sheetdb.io/api/v1/kcrrp64tuz8jo', {
-        sheet: 'Sheet1',
-        data: {
-          fecha: new Date().toLocaleString(),
-          email: this.$route.params.email,
-          genero: this.genero,
-          edad: this.edad,
-          carrera: this.carrera,
-          interes: this.interes
-        }
-      }).then(
-        function(result) {
-          console.log(result)
-        },
-        function(error) {
-          console.log(error)
-        }
-      )
+      // SheetDB.write('https://sheetdb.io/api/v1/kcrrp64tuz8jo', {
+      //   sheet: 'Sheet1',
+      //   data: {
+      //     fecha: new Date().toLocaleString(),
+      //     email: this.$route.params.email,
+      //     genero: this.genero,
+      //     edad: this.edad,
+      //     carrera: this.carrera,
+      //     interes: this.interes
+      //   }
+      // }).then(
+      //   function(result) {
+      //     console.log(result)
+      //   },
+      //   function(error) {
+      //     console.log(error)
+      //   }
+      // )
+      this.$router.push({ name: 'intro' })
     }
   },
   props: {

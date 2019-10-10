@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home.vue'
 import Slideshow from '@/components/Slideshow.vue'
 import PersonalQuestionnaire from '@/components/PersonalQuestionnaire.vue'
+import Intro from '@/components/Intro.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -23,6 +24,11 @@ export default new Router({
       path: '/slideshow',
       name: 'slideshow',
       component: Slideshow
+    },
+    {
+      path: '/intro',
+      name: 'intro',
+      component: Intro
     }
   ]
 })
