@@ -1,20 +1,15 @@
 <template>
   <div id="app">
-    <slideshow />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Slideshow from './components/Slideshow.vue';
-
 export default {
   name: 'app',
-  components: {
-    Slideshow
-  },
+  components: {},
   methods: {}
 }
 </script>
 
-<style>
-</style>
+<style></style>
