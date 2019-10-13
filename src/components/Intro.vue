@@ -7,7 +7,10 @@
         <em>Las Flores y la Polinizacion</em>. Favor prestar atencion a la
         imagen mostrada y leer el texto correspondiente debajo de la imagen.
       </p>
-      <p>Presione el boton <em>Continuar</em> para ver la presentacion</p>
+      <p>
+        Presione el boton
+        <em>Continuar</em> para ver la presentacion
+      </p>
     </div>
     <button @click="continuar" class="w3-button w3-pink w3-margin-top">
       Continuar
@@ -19,6 +22,10 @@
 export default {
   methods: {
     continuar() {
+      localStorage.setItem(
+        'pictureTest',
+        ['photo', 'drawing', 'clipart'][Math.floor(Math.random() * 3)]
+      )
       this.$router.push({ name: 'slideshow' })
     }
   }
