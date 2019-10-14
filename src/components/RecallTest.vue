@@ -542,6 +542,8 @@ export default {
           edad: localStorage.getItem('edad'),
           carrera: localStorage.getItem('carrera'),
           interes: localStorage.getItem('interes'),
+          esfuerzo: localStorage.getItem('esfuerzo'),
+          dificultad: localStorage.getItem('dificultad'),
           p1: Number(this.p1),
           p2: Number(this.p2),
           p3: Number(this.p3),
@@ -568,6 +570,8 @@ export default {
           localStorage.removeItem('edad')
           localStorage.removeItem('carrera')
           localStorage.removeItem('interes')
+          localStorage.removeItem('esfuerzo')
+          localStorage.removeItem('dificultad')
           localStorage.removeItem('fin_slideshow')
 
           that.$router.push({ name: 'fin' })

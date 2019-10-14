@@ -6,6 +6,7 @@ import PersonalQuestionnaire from '@/components/PersonalQuestionnaire.vue'
 import Intro from '@/components/Intro.vue'
 import RecallTest from '@/components/RecallTest.vue'
 import ThankYou from '@/components/ThankYou.vue'
+import MentalEffort from '@/components/MentalEffort.vue'
 Vue.use(Router)
 
 const router = new Router({
@@ -41,13 +42,17 @@ const router = new Router({
       path: '/fin',
       name: 'fin',
       component: ThankYou
+    },
+    {
+      path: '/mental',
+      name: 'mental',
+      component: MentalEffort
     }
   ]
 })
 
 router.beforeEach((to, from, next) => {
   if (to.path !== '/test' && localStorage.getItem('fin_slideshow') === '1') {
-    console.log('ok')
     next('/test')
   } else {
     next()

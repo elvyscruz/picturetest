@@ -204,8 +204,8 @@ export default {
       }
     },
     fin_slideshow() {
-      localStorage.setItem('fin_slideshow', '1')
-      this.$router.push({ name: 'test' })
+      //    localStorage.setItem('fin_slideshow', '1')
+      this.$router.push({ name: 'mental' })
     }
   },
   computed: {

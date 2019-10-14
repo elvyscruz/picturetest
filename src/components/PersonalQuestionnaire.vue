@@ -82,8 +82,8 @@
         </p>
         <p>
           <label for>
-            En una escala del 1 al 7, donde 1 es muy poco y 7 es mucho, como
-            calificaria su interes personal en las flores y la botanica?
+            En una escala del 1 al 7, donde 1 es muy bajo y 7 es muy alto, como
+            calificaria tu interes personal en las flores y la botanica?
           </label>
           <input
             v-model="interes"
