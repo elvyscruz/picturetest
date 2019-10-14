@@ -4,9 +4,11 @@ import Home from '@/components/Home.vue'
 import Slideshow from '@/components/Slideshow.vue'
 import PersonalQuestionnaire from '@/components/PersonalQuestionnaire.vue'
 import Intro from '@/components/Intro.vue'
+import RecallTest from '@/components/RecallTest.vue'
+import ThankYou from '@/components/ThankYou.vue'
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -29,6 +31,27 @@ export default new Router({
       path: '/intro',
       name: 'intro',
       component: Intro
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: RecallTest
+    },
+    {
+      path: '/fin',
+      name: 'fin',
+      component: ThankYou
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.path !== '/test' && localStorage.getItem('fin_slideshow') === '1') {
+    console.log('ok')
+    next('/test')
+  } else {
+    next()
+  }
+})
+
+export default router

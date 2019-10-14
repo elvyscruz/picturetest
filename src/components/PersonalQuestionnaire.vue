@@ -1,8 +1,8 @@
 <template>
-  <div class="w3-container">
-    <h1>Favor contestar las siguientes preguntas</h1>
+  <div class="w3-container w3-content">
+    <h1 class="w3-lobster">Favor contestar las siguientes preguntas</h1>
     <div>
-      <form @submit.prevent="continuar">
+      <form @submit.prevent="continuar" class="w3-large">
         <p>
           <label for="genero">Cual es su genero?</label>
           <br />
@@ -106,7 +106,6 @@
 </template>
 
 <script>
-// import SheetDB from 'sheetdb-js'
 export default {
   data() {
     return {
@@ -118,24 +117,13 @@ export default {
   },
   methods: {
     continuar() {
-      // SheetDB.write('https://sheetdb.io/api/v1/kcrrp64tuz8jo', {
-      //   sheet: 'Sheet1',
-      //   data: {
-      //     fecha: new Date().toLocaleString(),
-      //     email: this.$route.params.email,
-      //     genero: this.genero,
-      //     edad: this.edad,
-      //     carrera: this.carrera,
-      //     interes: this.interes
-      //   }
-      // }).then(
-      //   function(result) {
-      //     console.log(result)
-      //   },
-      //   function(error) {
-      //     console.log(error)
-      //   }
-      // )
+      localStorage.setItem('email', this.$route.params.email)
+      localStorage.setItem('matricula', this.$route.params.matricula)
+      localStorage.setItem('genero', this.genero)
+      localStorage.setItem('edad', this.edad)
+      localStorage.setItem('carrera', this.carrera)
+      localStorage.setItem('interes', this.interes)
+
       this.$router.push({ name: 'intro' })
     }
   },

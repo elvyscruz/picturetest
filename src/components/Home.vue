@@ -1,5 +1,5 @@
 <template>
-  <div class="w3-container">
+  <div class="w3-container w3-content">
     <h1 class="w3-lobster">Uso de Imagenes en el Aprendizaje Multimedia</h1>
     <div class="w3-panel w3-card w3-yellow w3-large">
       <p>
@@ -38,6 +38,17 @@
           type="email"
           name="email"
           placeholder="Escriba su Email"
+          required
+        />
+      </p>
+      <p>
+        <label for="matricula">Matricula</label>
+        <br />
+        <input
+          v-model="matricula"
+          type="text"
+          name="matricula"
+          placeholder="Matricula de la Universdiad"
           required
         />
       </p>
@@ -83,20 +94,19 @@
 
 export default {
   data() {
-    return { consent: null, email: '' }
+    return { consent: null, email: '', matricula: '' }
   },
   methods: {
     continuar() {
       if (this.consent === '') {
-        this.$router.push({ name: 'pq', params: { email: this.email } })
+        this.$router.push({
+          name: 'pq',
+          params: { email: this.email, matricula: this.matricula }
+        })
       }
     }
   }
 }
 </script>
 
-<style scoped>
-.w3-lobster {
-  font-family: 'Lobster', serif;
-}
-</style>
+<style scoped></style>

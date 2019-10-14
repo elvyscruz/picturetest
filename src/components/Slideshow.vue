@@ -1,13 +1,17 @@
 <template>
-  <div>
+  <div class="w3-container">
     <div class="w3-display-container w3-content">
       <img :src="pictureUrl" width="100%" class="w3-image" />
       <div
         class="w3-center w3-container w3-display-bottom-middle w3-section w3-large w3-text-white w3-display-bottommiddle"
         style="width:100%"
       >
-        <div @click="backward" class="w3-button w3-left">&#10094;</div>
-        <div @click="forward" class="w3-button w3-right">&#10095;</div>
+        <div @click="backward" class="w3-button w3-left w3-yellow">
+          &#10094;
+        </div>
+        <div @click="forward" class="w3-button w3-right w3-yellow">
+          &#10095;
+        </div>
         <span
           @click="set_slide(slide.id)"
           v-for="slide in slides"
@@ -22,6 +26,15 @@
         <i>{{ slides[current].title }}</i>
       </p>
       <p class="w3-large">{{ slides[current].text }}</p>
+    </div>
+    <div class="w3-center">
+      <button
+        @click="fin_slideshow"
+        v-show="current == slides.length - 1"
+        class="w3-button w3-deep-orange w3-hover-orange w3-margin-bottom"
+      >
+        Finalizar Presentacion y Continuar
+      </button>
     </div>
   </div>
 </template>
@@ -130,7 +143,7 @@ export default {
           },
           title: 'La Polinizacion',
           text:
-            'Las plantas con flores se reproducen mediante un proceso llamado polinización, este consiste en la transferencia del polen de una flor a otra flor. La polinización puede realizarse de forma directa en una misma flor y de forma indirecta o cruzada entre 2 flores a traves de insectos las abejas.'
+            'Las plantas con flores se reproducen mediante un proceso llamado polinización, este consiste en la transferencia del polen de una flor a otra flor. La polinización puede realizarse de forma directa en una misma flor u otra flor en la misma planta o de forma cruzada entre 2 flores de la misma especie.'
         },
         {
           id: 9,
@@ -156,7 +169,7 @@ export default {
             'Insectos como las abejas son atraídos por las flores brillantes y perfumadas. Cuando la abeja se acerca a la flor para recoger el néctar, el polen se pega a sus patas traseras. El estigma pegajoso de otra flor atrapa el polen cuando la abeja aterriza o vuela cerca de él.'
         },
         {
-          id: 12,
+          id: 11,
           url: {
             drawing: 'https://via.placeholder.com/1920x1080',
             clipart: '',
@@ -189,11 +202,15 @@ export default {
       } else if (event.key === 'ArrowRight') {
         this.forward()
       }
+    },
+    fin_slideshow() {
+      localStorage.setItem('fin_slideshow', '1')
+      this.$router.push({ name: 'test' })
     }
   },
   computed: {
     pictureUrl: function() {
-      return `img/${this.current}/${localStorage.getItem('pictureTest')}.png`
+      return `img/${this.current}/${localStorage.getItem('test')}.png`
     }
   },
   created() {
